@@ -57,5 +57,5 @@ end
 perform if __FILE__ == $0
 ```
 
-<p align="center"> <img src="screenshots/ping_pong.jpg" width="300"> </p>
+<p align="center"> <img src="screenshots/ping_pong.jpg" width="400"> </p>
 
