@@ -20,6 +20,7 @@ def perform
 
   bot.message(with_text: 'Hi') do |event|
     event.respond 'Hey!'
+    logger.info("Said HEY to #{event.user.username}")
   end
 
   bot.command :hi do |event|
