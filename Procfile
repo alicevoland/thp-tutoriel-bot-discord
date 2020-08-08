@@ -1,1 +1,1 @@
-ruby command_the_bot.rb
+bot: ruby command_the_bot.rb
