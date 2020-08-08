@@ -59,3 +59,7 @@ perform if __FILE__ == $0
 
 <p align="center"> <img src="screenshots/ping_pong.jpg" width="400"> </p>
 
+TIPS! Discord > Settings > Appearance > Developer Mode : permet de récupérer les channel ID par exemple avec un clic droit.
+
+
+
