@@ -9,6 +9,7 @@ $:.unshift File.expand_path('lib', __dir__)
 
 # Main method of the script
 def perform
+  puts 'LET US GO ' * 10
   bot = Discordrb::Commands::CommandBot.new token: ENV['DISCORD_BOT_TOKEN'], client_id: ENV['DISCORD_CLIENT_ID'], prefix: '$', advanced_functionality: true
 
   bot.send_message(737_655_830_031_237_232, 'Bonjour! <@693712651687297074> ', tts = false, embed = nil)
