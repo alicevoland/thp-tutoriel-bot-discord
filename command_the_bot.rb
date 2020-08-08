@@ -21,7 +21,7 @@ def perform
   end
 
   bot.command :hi do |event|
-    "Hi #{event.user.username}"
+    event.respond "Hi #{event.user.username}"
     puts "Said Hi to #{event.user.username}"
   end
 
