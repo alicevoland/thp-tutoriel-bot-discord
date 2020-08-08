@@ -5,6 +5,10 @@ Bundler.require
 require 'discordrb'
 require 'dotenv/load'
 
+MEGABYTE = 1024 ** 2
+ONE_HUNDRED_MEGABYTES = MEGABYTE * 100
+logger = Logger.new("my_log.txt", 1, ONE_HUNDRED_MEGABYTES)
+
 $:.unshift File.expand_path('lib', __dir__)
 
 # Main method of the script
@@ -20,6 +24,7 @@ def perform
 
   bot.command :hi do |event|
     "Hi #{event.user.username}"
+    logger.info("Said Hi to #{event.user.username}")
   end
 
   at_exit { bot.stop }
