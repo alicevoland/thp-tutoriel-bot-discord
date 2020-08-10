@@ -93,5 +93,24 @@ bot.run :async
 bot.join
 ```
 
+### 2.2 Accéder aux utilisateur et channels
+
+Voir l'exemple `command_th_bot.rb` pour des exemples sur la manière de retrouver tous les channels et les users, ce qui nous permettra de discuter avec eux.
+
+```ruby
+# All servers and channels bot has access to
+bot.servers.each do |id, server|
+  server.channels.each do |channel|
+    puts "CHANNEL: #{channel.inspect}"
+  end
+end
+
+# All users bot share a server with
+bot.users.each do |id, user|
+  puts "USER id=#{id} -> #{user.inspect}"
+end
+```
+
+### 2.3 Envoyer des messages
 
 
