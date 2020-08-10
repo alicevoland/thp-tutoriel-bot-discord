@@ -13,6 +13,7 @@ def perform
 
   bot = Discordrb::Commands::CommandBot.new token: ENV['DISCORD_BOT_TOKEN'], client_id: ENV['DISCORD_CLIENT_ID'], prefix: '$', advanced_functionality: true
 
+
   bot.send_message(737_655_830_031_237_232, 'Bonjour! <@693712651687297074> ', tts = false, embed = nil)
 
   bot.message(with_text: 'Hi') do |event|
@@ -26,7 +27,11 @@ def perform
   end
 
   at_exit { bot.stop }
-  bot.run
+  bot.run :async
+
+  puts bot.servers
+
+  bot.join
 end
 
 # Only if the file is being executed directly, as a script

@@ -62,4 +62,36 @@ perform if __FILE__ == $0
 TIPS! Discord > Settings > Appearance > Developer Mode : permet de récupérer les channel ID par exemple avec un clic droit.
 
 
+## 2. Faire travailler le CommandBot !
+
+### 2.1 Commande bonjour
+
+Pour pouvoir faire plus de choses avec notre bot on change la définition avec : 
+
+```ruby
+bot = Discordrb::Commands::CommandBot.new token: ENV['DISCORD_BOT_TOKEN'], client_id: ENV['DISCORD_CLIENT_ID'], prefix: '$', advanced_functionality: true
+```
+
+L'option `prefix` déinit le préfixe qui sera utilisé pour pouvoir commander notre bot. Par exemple pour avoir un bot qui répond à une commande du type `$hi` (soit en message privé au bot, soit sur tout channel auquel il a accès) on peut définit la méthode suivante :
+
+```ruby
+bot.command :hi do |event|
+  event.respond "Hi #{event.user.username}"
+end
+```
+
+#### Astuce
+
+Il est pratique de faire tourner le bot de manière asynchrone. Le `at_exit` garantit qu'il informera Discord avant de disparaitre, dans le cas contraire il pourra apparaitre en ligne quelques minutes après sa destruction à la fin du programme (si le programme se termine avant le `join`).
+
+```ruby
+at_exit { bot.stop }
+bot.run :async
+
+# Code nécessitant que le bot soit opérationnel :)
+
+bot.join
+```
+
+
 
