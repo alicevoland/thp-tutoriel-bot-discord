@@ -38,6 +38,13 @@ def perform
     puts "Said Hi to #{event.user.username}"
   end
 
+  # Send message to channel (change the channel_id)
+  bot.send_message(123_123_123_123_123_123, 'Bonjour Monde !')
+
+  # Send message to user (change the user_id)
+  user = bot.users[123_123_123_123_123_123]
+  bot.send_message(user.pm, "Bonjour #{user.username} !")
+
   bot.join
 end
 

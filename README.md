@@ -113,4 +113,28 @@ end
 
 ### 2.3 Envoyer des messages
 
+#### Astuce
+
+Il est nécessaire de connaitre le ID du channel ou de l'utilisateur. Pour cela il est possible de parcourir les channels auxquels le bot à accès (section précédente). Il est aussi possible de les récupérer sur Discord, pour cela il faut activer une option :
+ 1. Aller dans les Settings
+ 2. Aller dans la catégorie Apparence
+ 3. Tout en bas, section ADVANCED, cocher la case Developer Mode
+
+Et voilà ! Un clic droit sur un utilisateur ou un channel donne accès à son ID :)
+
+#### Envoyer un message sur un channel
+
+```ruby
+# With channel_id as first argument (yes this is an integer)
+bot.send_message(123_123_123_123_123_123, 'Bonjour Monde !')
+```
+
+#### Envoyer un message direct à un utilisateur
+
+```ruby
+  # Send message to user (change the user_id)
+  user = bot.users[123_123_123_123_123_123]
+  bot.send_message(user.pm, "Bonjour #{user.username} !")
+```
+
 
